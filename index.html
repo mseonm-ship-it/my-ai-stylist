@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>나만의 AI 스타일리스트</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">MY AI STYLIST</p>
+      <h1>오늘 뭐 입지? 👕</h1>
+      <p>내 옷장을 먼저 활용하고, 컬러·날씨·상황을 함께 보는 개인 스타일리스트</p>
+    </div>
+    <button id="demoBtn" class="ghost">샘플 옷장 넣기</button>
+  </header>
+
+  <main>
+    <section class="panel profile">
+      <div>
+        <h2>🎨 나의 컬러 프로필</h2>
+        <p class="muted">현재는 사용자가 직접 설정하는 MVP입니다. 사진 분석 기능은 다음 단계에서 연결할 수 있습니다.</p>
+      </div>
+      <div class="color-grid">
+        <label>톤
+          <select id="tone">
+            <option value="cool">쿨톤 ❄️</option>
+            <option value="warm">웜톤 ☀️</option>
+            <option value="neutral">뉴트럴</option>
+          </select>
+        </label>
+        <label>세부 타입
+          <select id="season">
+            <option value="summer">여름 쿨톤</option>
+            <option value="winter">겨울 쿨톤</option>
+            <option value="spring">봄 웜톤</option>
+            <option value="autumn">가을 웜톤</option>
+            <option value="neutral">뉴트럴</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <div>
+          <h2>👕 내 옷장</h2>
+          <p class="muted">아이템을 추가하면 브라우저에 자동 저장됩니다.</p>
+        </div>
+        <button id="clearBtn" class="danger ghost">전체 삭제</button>
+      </div>
+
+      <form id="wardrobeForm" class="form-grid">
+        <input id="name" required placeholder="예: 파란색 반팔티">
+        <select id="category">
+          <option>상의</option><option>하의</option><option>아우터</option>
+          <option>신발</option><option>모자</option><option>가방</option><option>액세서리</option>
+        </select>
+        <select id="color">
+          <option value="blue">파란색 💙</option>
+          <option value="navy">네이비 🔵</option>
+          <option value="black">검정 🖤</option>
+          <option value="white">화이트 🤍</option>
+          <option value="gray">회색 🩶</option>
+          <option value="beige">베이지 🤎</option>
+          <option value="brown">브라운 🤎</option>
+          <option value="khaki">카키 🫒</option>
+          <option value="olive">올리브 🫒</option>
+          <option value="red">레드 ❤️</option>
+          <option value="orange">오렌지 🧡</option>
+          <option value="yellow">옐로우 💛</option>
+          <option value="burgundy">버건디 🍷</option>
+        </select>
+        <select id="fit">
+          <option value="regular">레귤러</option>
+          <option value="slim">슬림</option>
+          <option value="relaxed">릴랙스</option>
+          <option value="oversized">오버사이즈</option>
+        </select>
+        <button class="primary" type="submit">+ 옷장에 추가</button>
+      </form>
+
+      <div id="wardrobe" class="wardrobe"></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <div>
+          <h2>✨ 오늘의 코디</h2>
+          <p class="muted">현재 MVP는 옷장 데이터와 컬러 프로필을 기준으로 3가지 방향을 계산합니다.</p>
+        </div>
+        <button id="recommendBtn" class="primary">코디 3개 추천</button>
+      </div>
+      <div id="looks" class="looks empty">옷장을 등록하고 추천 버튼을 눌러보세요.</div>
+    </section>
+  </main>
+
+  <footer>MY AI STYLIST · GitHub Pages용 MVP</footer>
+  <script src="app.js"></script>
+</body>
+</html>
